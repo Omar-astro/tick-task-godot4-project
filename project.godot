@@ -33,6 +33,7 @@ window/vsync/vsync_mode=0
 folder_colors={
 "res://Audio/": "teal",
 "res://Distractions/": "orange",
+"res://GitData/": "gray",
 "res://Main Scenes/": "yellow",
 "res://Others/": "blue",
 "res://Scripts/": "green",
