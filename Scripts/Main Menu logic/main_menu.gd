@@ -37,7 +37,7 @@ func _ready():
 func save_file():
 	var data = {"Music Volume": music_volume.value,
 				"SFX Volume": SFX_volume.value,
-				"Personal Best": 0.0}
+				"Personal Best": personal_best}
 	var json_file = JSON.stringify(data)
 	var file = FileAccess.open(VARIABLE, FileAccess.WRITE)
 	file.store_string(json_file)
@@ -52,7 +52,6 @@ func load_file():
 		var result = JSON.parse_string(json_string)
 		if result is Dictionary:
 			print('Loaded data: ', result)
-			#block_1.position.x = result['po1'][0]
 			personal_best = result['Personal Best']
 			music_volume.value = result['Music Volume']
 			SFX_volume.value = result['SFX Volume']
