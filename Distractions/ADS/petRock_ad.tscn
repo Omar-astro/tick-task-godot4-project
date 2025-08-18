@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://ds2wsivno70f"]
+
+[ext_resource type="Script" uid="uid://bq5fvj4wfeuqd" path="res://Scripts/Distractions/Ads.gd" id="1_ipbw1"]
+[ext_resource type="AudioStream" uid="uid://c48ltiy3sf2n1" path="res://Audio/Others/animation-funny-background-music-362849.mp3" id="2_v3cgs"]
+[ext_resource type="Texture2D" uid="uid://bkav16w5juenp" path="res://Sprites/ADS/assets_task_01k0m0zw73ej1b1mzpnazwre77_1753018895_img_0.webp" id="3_ipbw1"]
+[ext_resource type="FontFile" uid="uid://cj1pxsguxt5v" path="res://Others/Fonts/VT323-Regular.ttf" id="4_s175p"]
+
+[node name="Apples AD" type="Control"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ipbw1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="Animation-funny-background-music-362849" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_v3cgs")
+autoplay = true
+bus = &"Others"
+parameters/looping = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+offset_left = 114.0
+offset_top = 63.0
+offset_right = 1038.0
+offset_bottom = 585.0
+texture = ExtResource("3_ipbw1")
+expand_mode = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/TextureRect"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -22.0
+offset_top = -16.0
+offset_right = 946.0
+offset_bottom = 539.0
+color = Color(0.74978, 0.74978, 0.74978, 1)
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+visible = false
+offset_left = 814.0
+offset_top = 459.0
+offset_right = 975.0
+offset_bottom = 521.0
+theme_override_fonts/font = ExtResource("4_s175p")
+theme_override_font_sizes/font_size = 37
+text = "Skip"
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 811.0
+offset_top = 471.0
+offset_right = 974.0
+offset_bottom = 509.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("4_s175p")
+theme_override_font_sizes/font_size = 37
+text = "Skip in...5"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

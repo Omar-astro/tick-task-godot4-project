@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ms5mjw3erko"]
+
+[ext_resource type="Script" uid="uid://caud2ihmo55pt" path="res://Scripts/Distractions/fake_reward.gd" id="1_08ia1"]
+[ext_resource type="Texture2D" uid="uid://17ic24r50j4o" path="res://Sprites/icons/gold-coin-vector-png-11552724708ugpbfdjzb6.png" id="2_waq0n"]
+
+[node name="Fake Reward" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_08ia1")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 7.0
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+offset_right = 307.0
+offset_bottom = 104.0
+pivot_offset = Vector2(152.96, 55.345)
+text = "Click Here For 460 coins"
+icon = ExtResource("2_waq0n")
+expand_icon = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_button_pressed"]

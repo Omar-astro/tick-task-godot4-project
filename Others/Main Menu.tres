@@ -1,0 +1,53 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://f7svjcn08icf"]
+
+[ext_resource type="FontFile" uid="uid://cj1pxsguxt5v" path="res://Others/Fonts/VT323-Regular.ttf" id="1_f6j06"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a34d1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwry6"]
+bg_color = Color(0.25, 0.25, 0.35, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.55, 0.55, 0.9, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lavgv"]
+bg_color = Color(0.15, 0.15, 0.2, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.35, 0.35, 0.4, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eq7n6"]
+bg_color = Color(0.1, 0.1, 0.15, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.8, 0.2, 0.3, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[resource]
+Button/colors/font_hover_color = Color(0.6, 0.9, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0.5, 1)
+Button/colors/font_pressed_color = Color(1, 0.4, 0.4, 1)
+Button/constants/outline_size = 2
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_f6j06")
+Button/styles/focus = SubResource("StyleBoxEmpty_a34d1")
+Button/styles/hover = SubResource("StyleBoxFlat_gwry6")
+Button/styles/normal = SubResource("StyleBoxFlat_lavgv")
+Button/styles/pressed = SubResource("StyleBoxFlat_eq7n6")

@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=3 uid="uid://dmvssdimli0po"]
+
+[ext_resource type="VideoStream" uid="uid://d1souvv5bjlh8" path="res://Others/videoplayback.ogv" id="1_qokdi"]
+
+[sub_resource type="Animation" id="Animation_qokdi"]
+resource_name = "new_animation"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/VideoStreamPlayer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1.28, 3.3, 4.16667, 6.53333, 7.63333, 10.0425, 11.7333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-200, 78), Vector2(1230, 98), Vector2(1214, 285), Vector2(-195, 334), Vector2(-195, 511), Vector2(1190, 40), Vector2(-202, 118)]
+}
+
+[sub_resource type="Animation" id="Animation_gvxwo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/VideoStreamPlayer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-200, 78)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hoqh1"]
+_data = {
+&"RESET": SubResource("Animation_gvxwo"),
+&"new_animation": SubResource("Animation_qokdi")
+}
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="CanvasLayer"]
+offset_left = -200.0
+offset_top = 78.0
+offset_right = -34.0
+offset_bottom = 174.0
+stream = ExtResource("1_qokdi")
+autoplay = true
+expand = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hoqh1")
+}
+autoplay = "new_animation"

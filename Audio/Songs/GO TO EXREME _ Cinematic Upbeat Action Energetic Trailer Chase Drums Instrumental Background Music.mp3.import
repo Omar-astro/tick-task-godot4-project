@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://lkk2bbthcrj5"
+path="res://.godot/imported/GO TO EXREME _ Cinematic Upbeat Action Energetic Trailer Chase Drums Instrumental Background Music.mp3-b204ab4eb9b419bbfc4cd90bec4ccc21.mp3str"
+
+[deps]
+
+source_file="res://Audio/Songs/GO TO EXREME _ Cinematic Upbeat Action Energetic Trailer Chase Drums Instrumental Background Music.mp3"
+dest_files=["res://.godot/imported/GO TO EXREME _ Cinematic Upbeat Action Energetic Trailer Chase Drums Instrumental Background Music.mp3-b204ab4eb9b419bbfc4cd90bec4ccc21.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

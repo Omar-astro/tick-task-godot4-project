@@ -1,0 +1,455 @@
+[gd_scene load_steps=23 format=3 uid="uid://dime0uvm3ntp5"]
+
+[ext_resource type="Script" uid="uid://dh3p536gx2pma" path="res://Scripts/LevelScene/score.gd" id="1_p4ymu"]
+[ext_resource type="Script" uid="uid://kvvr58jlo00p" path="res://Scripts/LevelScene/GlobalScene.gd" id="1_qa87g"]
+[ext_resource type="Script" uid="uid://d3c6sspf7wphd" path="res://Scripts/LevelScene/camera_2d.gd" id="2_a7a6n"]
+[ext_resource type="Texture2D" uid="uid://17ic24r50j4o" path="res://Sprites/icons/gold-coin-vector-png-11552724708ugpbfdjzb6.png" id="2_m50lf"]
+[ext_resource type="Script" uid="uid://cal2gr515ew70" path="res://Scripts/LevelScene/task_spawner.gd" id="3_m50lf"]
+[ext_resource type="Texture2D" uid="uid://6wj6obl38k6c" path="res://Sprites/icons/Sprite-0001-Sheet.png" id="4_n3a1n"]
+[ext_resource type="Texture2D" uid="uid://cjvkvj5oa7gkc" path="res://Sprites/Shapes/Download_White_Circle_PNG-removebg-preview.png" id="5_kxqe2"]
+[ext_resource type="AudioStream" uid="uid://6k57poiaunu5" path="res://Audio/SFX/sample_input_typing02_kofi_by_miraclei-363632.mp3" id="6_vm5g3"]
+[ext_resource type="AudioStream" uid="uid://dgwfiwatwacte" path="res://Audio/Songs/Dark Ambient Music No Copyright.mp3" id="7_vm5g3"]
+[ext_resource type="AudioStream" uid="uid://lkk2bbthcrj5" path="res://Audio/Songs/GO TO EXREME _ Cinematic Upbeat Action Energetic Trailer Chase Drums Instrumental Background Music.mp3" id="10_3pag4"]
+[ext_resource type="AudioStream" uid="uid://c1asrbruqthap" path="res://Audio/Songs/Copyright Free Chase Music - _Run_ by Ross Bugden .mp3" id="11_1oug1"]
+[ext_resource type="AudioStream" uid="uid://binmf2m2nves5" path="res://Audio/SFX/marimba-lose-250960.mp3" id="12_kwm0h"]
+[ext_resource type="AudioStream" uid="uid://ctiy7cugnifij" path="res://Audio/SFX/losing-horn-313723.mp3" id="13_emmwn"]
+[ext_resource type="FontFile" uid="uid://dwkb418wjjian" path="res://Others/Fonts/PressStart2P-Regular.ttf" id="14_emmwn"]
+[ext_resource type="FontFile" uid="uid://cj1pxsguxt5v" path="res://Others/Fonts/VT323-Regular.ttf" id="15_i86l8"]
+[ext_resource type="Theme" uid="uid://f7svjcn08icf" path="res://Others/Main Menu.tres" id="16_0bqql"]
+[ext_resource type="FontFile" uid="uid://34tumdo8an2b" path="res://Others/Fonts/Sabo-Filled.otf" id="17_obai8"]
+
+[sub_resource type="Animation" id="Animation_ufe2t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.01, 0.01)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.476572, 0.806161, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ggw5l"]
+resource_name = "Spawn effect"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.406126, 1),
+"update": 0,
+"values": [Vector2(0.01, 0.01), Vector2(0.6, 0.6)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/Sprite2D:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.406126, 1),
+"update": 0,
+"values": [Color(0.476572, 0.806161, 1, 1), Color(0.477, 0.806, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_no2l8"]
+_data = {
+&"RESET": SubResource("Animation_ufe2t"),
+&"Spawn effect": SubResource("Animation_ggw5l")
+}
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0bqql"]
+thickness = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnmu0"]
+bg_color = Color(0.12549, 0.12549, 0.12549, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 12
+shadow_offset = Vector2(13.17, 9.42)
+
+[node name="Main" type="Node2D"]
+
+[node name="Score" type="Node" parent="."]
+script = ExtResource("1_p4ymu")
+
+[node name="GlobalScene" type="Node" parent="."]
+process_mode = 3
+script = ExtResource("1_qa87g")
+Warning_color = Color(0.815358, 0.732783, 0, 1)
+Last_warning_color = Color(0.801, 0, 0.024957, 1)
+lost_color = Color(0.221359, 0, 0.0107725, 1)
+
+[node name="StopWatch" type="Timer" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+
+[node name="Label" type="Label" parent="UI/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 36
+text = "20"
+
+[node name="TextureRect" type="TextureRect" parent="UI/HBoxContainer"]
+custom_minimum_size = Vector2(62.21, 75.285)
+layout_mode = 2
+texture = ExtResource("2_m50lf")
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.5
+offset_right = 20.5
+offset_bottom = 50.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 11
+theme_override_font_sizes/font_size = 36
+text = "00:00"
+
+[node name="TrackingBar" type="PanelContainer" parent="UI"]
+clip_contents = true
+custom_minimum_size = Vector2(230, 340)
+anchors_preset = -1
+anchor_top = 0.486
+anchor_right = 0.201
+anchor_bottom = 1.0
+offset_top = 0.071991
+offset_right = 0.447998
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/TrackingBar"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/TrackingBar/ScrollContainer"]
+clip_contents = true
+layout_mode = 2
+
+[node name="Lives" type="HBoxContainer" parent="UI"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Heart1" type="Sprite2D" parent="UI/Lives"]
+position = Vector2(20, 20)
+scale = Vector2(2, 2)
+texture = ExtResource("4_n3a1n")
+hframes = 2
+
+[node name="Heart2" type="Sprite2D" parent="UI/Lives"]
+position = Vector2(60, 20)
+scale = Vector2(2, 2)
+texture = ExtResource("4_n3a1n")
+hframes = 2
+
+[node name="Heart3" type="Sprite2D" parent="UI/Lives"]
+position = Vector2(100, 20)
+scale = Vector2(2, 2)
+texture = ExtResource("4_n3a1n")
+hframes = 2
+
+[node name="Task Spawner" type="Node" parent="."]
+script = ExtResource("3_m50lf")
+
+[node name="spawn time" type="Timer" parent="Task Spawner"]
+
+[node name="delay spawn" type="Timer" parent="Task Spawner"]
+one_shot = true
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("2_a7a6n")
+base_camera_speed = 800.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_no2l8")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimationPlayer"]
+modulate = Color(0.476572, 0.806161, 1, 1)
+z_index = 1
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("5_kxqe2")
+
+[node name="spawn" type="AudioStreamPlayer" parent="AnimationPlayer"]
+stream = ExtResource("6_vm5g3")
+bus = &"SFX"
+
+[node name="Sounds" type="Node" parent="."]
+
+[node name="BG music 1" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("7_vm5g3")
+autoplay = true
+bus = &"BG Music"
+parameters/looping = true
+
+[node name="BG music 2" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("10_3pag4")
+bus = &"BG Music"
+parameters/looping = true
+
+[node name="BG music 3" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("11_1oug1")
+bus = &"BG Music"
+parameters/looping = true
+
+[node name="Lose sound 1" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("12_kwm0h")
+
+[node name="Lose sound 2" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource("13_emmwn")
+
+[node name="Spawn task time" type="Timer" parent="."]
+wait_time = 30.0
+one_shot = true
+autostart = true
+
+[node name="Distraction time" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[node name="DelayTime" type="Timer" parent="."]
+
+[node name="Lose Screen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="Lose Screen"]
+offset_left = 146.0
+offset_top = 85.0
+offset_right = 1046.0
+offset_bottom = 185.0
+theme_override_colors/font_color = Color(0.9, 0, 0.1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 18
+theme_override_fonts/font = ExtResource("14_emmwn")
+theme_override_font_sizes/font_size = 100
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PanelContainer" type="Panel" parent="Lose Screen"]
+offset_left = 1.0
+offset_top = 202.0
+offset_right = 1153.0
+offset_bottom = 543.0
+
+[node name="Total_score" type="Label" parent="Lose Screen/PanelContainer"]
+layout_mode = 2
+offset_top = 4.0
+offset_right = 1152.0
+offset_bottom = 27.0
+theme_override_fonts/font = ExtResource("15_i86l8")
+theme_override_font_sizes/font_size = 34
+text = "Total Score: 12534.26"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Lose Screen/PanelContainer"]
+layout_mode = 2
+offset_top = 58.0
+offset_right = 1152.0
+offset_bottom = 341.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Lose Screen/PanelContainer/ScrollContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Total Time" type="Label" parent="Lose Screen/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_i86l8")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxLine_0bqql")
+text = "Total score:                                                              12534.26"
+horizontal_alignment = 1
+
+[node name="No Upgrade" type="Label" parent="Lose Screen/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_i86l8")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxLine_0bqql")
+text = "Total score:                                                              12534.26"
+horizontal_alignment = 1
+
+[node name="No extend" type="Label" parent="Lose Screen/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_i86l8")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxLine_0bqql")
+text = "Total score:                                                              12534.26"
+horizontal_alignment = 1
+
+[node name="No of freeze" type="Label" parent="Lose Screen/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_i86l8")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxLine_0bqql")
+text = "Total score:                                                              12534.26"
+horizontal_alignment = 1
+
+[node name="No of autoBot" type="Label" parent="Lose Screen/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_i86l8")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxLine_0bqql")
+text = "Total score:                                                              12534.26"
+horizontal_alignment = 1
+
+[node name="money spent" type="Label" parent="Lose Screen/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_i86l8")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxLine_0bqql")
+text = "Total score:                                                              12534.26"
+horizontal_alignment = 1
+
+[node name="money gained" type="Label" parent="Lose Screen/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_i86l8")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxLine_0bqql")
+text = "Total score:                                                              12534.26"
+horizontal_alignment = 1
+
+[node name="No of dist" type="Label" parent="Lose Screen/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_i86l8")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxLine_0bqql")
+text = "Total score:                                                              12534.26"
+horizontal_alignment = 1
+
+[node name="no of tasks held" type="Label" parent="Lose Screen/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_i86l8")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxLine_0bqql")
+text = "Total score:                                                              12534.26"
+horizontal_alignment = 1
+
+[node name="No of coins" type="Label" parent="Lose Screen/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_i86l8")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxLine_0bqql")
+text = "Total score:                                                              12534.26"
+horizontal_alignment = 1
+
+[node name="tasks lost on" type="Label" parent="Lose Screen/PanelContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("15_i86l8")
+theme_override_font_sizes/font_size = 34
+theme_override_styles/normal = SubResource("StyleBoxLine_0bqql")
+text = "Total score:                                                              12534.26"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Lose Screen"]
+offset_left = 243.0
+offset_top = 555.0
+offset_right = 426.0
+offset_bottom = 632.0
+theme = ExtResource("16_0bqql")
+text = "Main Menu"
+
+[node name="Button2" type="Button" parent="Lose Screen"]
+offset_left = 670.0
+offset_top = 555.0
+offset_right = 853.0
+offset_bottom = 632.0
+theme = ExtResource("16_0bqql")
+text = "Restart"
+
+[node name="Pause screen" type="CanvasLayer" parent="."]
+layer = 3
+visible = false
+
+[node name="Control" type="Control" parent="Pause screen"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect" type="ColorRect" parent="Pause screen/Control"]
+layout_mode = 0
+offset_right = 1155.0
+offset_bottom = 658.0
+mouse_filter = 2
+color = Color(0.696, 0.696, 0.696, 0.724)
+
+[node name="Label" type="Label" parent="Pause screen/Control"]
+offset_left = 209.0
+offset_top = 81.0
+offset_right = 915.0
+offset_bottom = 202.0
+theme_override_colors/font_color = Color(1, 0.980392, 0.803922, 1)
+theme_override_colors/font_outline_color = Color(1, 0.980392, 0.803922, 1)
+theme_override_fonts/font = ExtResource("17_obai8")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_pnmu0")
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Pause screen/Control"]
+process_mode = 3
+layout_mode = 0
+offset_left = 306.0
+offset_top = 362.0
+offset_right = 479.0
+offset_bottom = 529.0
+theme = ExtResource("16_0bqql")
+text = "Main Menu"
+
+[node name="Button2" type="Button" parent="Pause screen/Control"]
+process_mode = 3
+layout_mode = 0
+offset_left = 613.0
+offset_top = 363.0
+offset_right = 786.0
+offset_bottom = 530.0
+theme = ExtResource("16_0bqql")
+text = "Resume"
+
+[connection signal="task_spawned" from="Task Spawner" to="GlobalScene" method="_on_task_spawner_task_spawned"]
+[connection signal="timeout" from="Task Spawner/delay spawn" to="Task Spawner" method="_on_delay_spawn_timeout"]
+[connection signal="timeout" from="Spawn task time" to="Task Spawner" method="_on_spawn_task_time_timeout"]
+[connection signal="timeout" from="Distraction time" to="Task Spawner" method="_on_distraction_time_timeout"]
+[connection signal="timeout" from="DelayTime" to="Score" method="_on_delay_time_timeout"]
+[connection signal="pressed" from="Lose Screen/Button" to="GlobalScene" method="_on_Menu_pressed"]
+[connection signal="pressed" from="Lose Screen/Button2" to="GlobalScene" method="_on_Restart_pressed"]
+[connection signal="pressed" from="Pause screen/Control/Button" to="GlobalScene" method="_on_Menu_pressed"]
+[connection signal="pressed" from="Pause screen/Control/Button2" to="GlobalScene" method="_on_ResumeButton_pressed"]

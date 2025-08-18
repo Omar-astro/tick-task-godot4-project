@@ -1,0 +1,707 @@
+[gd_scene load_steps=38 format=3 uid="uid://bf0743ib7ewk8"]
+
+[ext_resource type="Script" uid="uid://b7ik1hpurr3e0" path="res://Scripts/CommonTasks/lever_pull_task.gd" id="1_1vjcx"]
+[ext_resource type="Script" uid="uid://dulac838stqa6" path="res://Scripts/ColorConfusion/colorGlobal.gd" id="2_1vjcx"]
+[ext_resource type="Texture2D" uid="uid://dkvc0c1jxyyau" path="res://Sprites/icons/Task Icons/Colors.png" id="3_1vjcx"]
+[ext_resource type="Script" uid="uid://dpychyvd5mpr1" path="res://Scripts/CommonTasks/canvas_layer.gd" id="4_t786m"]
+[ext_resource type="Script" uid="uid://vxd202vwhrqe" path="res://Scripts/ColorConfusion/Colortask.gd" id="5_jqqwu"]
+[ext_resource type="FontFile" uid="uid://cj1pxsguxt5v" path="res://Others/Fonts/VT323-Regular.ttf" id="6_dd1gn"]
+[ext_resource type="Texture2D" uid="uid://17ic24r50j4o" path="res://Sprites/icons/gold-coin-vector-png-11552724708ugpbfdjzb6.png" id="7_ob1g0"]
+[ext_resource type="Texture2D" uid="uid://cngtpprbs55no" path="res://Sprites/icons/Time5.png" id="8_j0ulm"]
+[ext_resource type="Texture2D" uid="uid://cex1t6b7pfhl6" path="res://Sprites/Shapes/Robots.png" id="9_iwepo"]
+[ext_resource type="Texture2D" uid="uid://cjvkvj5oa7gkc" path="res://Sprites/Shapes/Download_White_Circle_PNG-removebg-preview.png" id="10_qvf2m"]
+[ext_resource type="Script" uid="uid://pgarmjux8jar" path="res://Scripts/CommonTasks/upgrades.gd" id="11_ek8ae"]
+[ext_resource type="Theme" uid="uid://bd407hh7klogy" path="res://Others/UpgradeButtons.tres" id="12_13wvl"]
+[ext_resource type="Texture2D" uid="uid://cu55i7k422liy" path="res://Sprites/Keys/keyboard_1.png" id="13_mt3ir"]
+[ext_resource type="Texture2D" uid="uid://clyssw5cm2gpe" path="res://Sprites/Keys/keyboard_3.png" id="14_ave8s"]
+[ext_resource type="Texture2D" uid="uid://catqqcpi0fwrx" path="res://Sprites/Keys/keyboard_2.png" id="15_ilhec"]
+[ext_resource type="Texture2D" uid="uid://b7rqxunvmok3h" path="res://Sprites/icons/Freeze icon2.png" id="16_tsxui"]
+[ext_resource type="Texture2D" uid="uid://ctuiaudxeu6uk" path="res://Sprites/Keys/keyboard_4.png" id="17_57myn"]
+[ext_resource type="Texture2D" uid="uid://do22tcqvv3t4m" path="res://Sprites/icons/Bot.png" id="18_pyjsd"]
+[ext_resource type="Theme" uid="uid://hugubdv3n5gd" path="res://Others/TabButtons.tres" id="19_8jgck"]
+[ext_resource type="Texture2D" uid="uid://b6nke1ewms74b" path="res://Sprites/Keys/keyboard_f1.png" id="20_pt3cr"]
+[ext_resource type="Texture2D" uid="uid://d37lxsk0gr8sk" path="res://Sprites/Keys/keyboard_f2.png" id="21_srxoo"]
+[ext_resource type="AudioStream" uid="uid://ia1sww7lnhvu" path="res://Audio/SFX/cash-register-purchase-87313.mp3" id="22_5d1va"]
+[ext_resource type="AudioStream" uid="uid://dpchlhbyl83w8" path="res://Audio/SFX/Ice Crack Freeze Sound Effect - ALexis KB Sounds.mp3" id="23_j366d"]
+[ext_resource type="AudioStream" uid="uid://bprtyotbo702v" path="res://Audio/SFX/[Reversed] woosh-230554.mp3" id="24_cwj1c"]
+[ext_resource type="AudioStream" uid="uid://sqpdjb553ycg" path="res://Audio/SFX/woosh-230554.mp3" id="25_jfiwt"]
+[ext_resource type="AudioStream" uid="uid://cbt3f47ct8aut" path="res://Audio/SFX/success-221935.mp3" id="26_qtjd8"]
+[ext_resource type="AudioStream" uid="uid://oiwu1hargnip" path="res://Audio/SFX/sample_error_fail01_kofi_by_miraclei-360129.mp3" id="27_u8r5o"]
+[ext_resource type="AudioStream" uid="uid://buocujydshftp" path="res://Audio/SFX/warning-sound-6686.mp3" id="28_qry2h"]
+[ext_resource type="AudioStream" uid="uid://crsqhdbe61sva" path="res://Audio/SFX/puzzle-error-47187.mp3" id="29_u3yna"]
+[ext_resource type="AudioStream" uid="uid://lyn0taq7bu7a" path="res://Audio/SFX/correct-156911.mp3" id="30_fmb81"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rgfj1"]
+size = Vector2(12, 18)
+
+[sub_resource type="Animation" id="Animation_eku5p"]
+resource_name = "Bot moving"
+length = 10.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 4.5, 6, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(59, 396), Vector2(896, 398), Vector2(896, 398), Vector2(59, 396)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 0
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(-5, 5)]
+}
+
+[sub_resource type="Animation" id="Animation_mv6h6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(59, 396)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hsb8t"]
+_data = {
+&"Bot moving": SubResource("Animation_eku5p"),
+&"RESET": SubResource("Animation_mv6h6")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggw5l"]
+atlas = ExtResource("9_iwepo")
+region = Rect2(0, 64, 24, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufe2t"]
+atlas = ExtResource("9_iwepo")
+region = Rect2(72, 64, 24, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_no2l8"]
+animations = [{
+"frames": [{
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ggw5l")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_ufe2t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Lever_pull" type="Node2D" groups=["Task"]]
+script = ExtResource("1_1vjcx")
+color_default = Color(1, 1, 1, 1)
+color_hover = Color(0.829612, 0.889782, 1, 1)
+fail_color = Color(1, 0, 0.0166664, 1)
+warning_color = Color(0.819447, 0.805632, 0, 1)
+fade_warning_color = Color(0.82, 0.806333, 0, 0.294118)
+ending_color = Color(1, 0.425788, 0.357085, 1)
+fade_ending_color = Color(1, 0.434667, 0.36, 0.294118)
+lost_color = Color(0.307562, 2.94801e-07, 1.56425e-07, 1)
+fade_lost_color = Color(0.31, 0, 0, 0.691)
+Transparent = Color(0, 0, 0, 0)
+correct_color = Color(0, 0.91, 0, 1)
+Freeze_color = Color(0.17, 0.585, 0.553, 0.597)
+
+[node name="Global" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_1vjcx")
+
+[node name="icon" type="Sprite2D" parent="."]
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3_1vjcx")
+
+[node name="Area2D" type="Area2D" parent="icon"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="icon/Area2D"]
+position = Vector2(4.76837e-07, -0.142857)
+shape = SubResource("RectangleShape2D_rgfj1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("4_t786m")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.001, 0.001)
+pivot_offset = Vector2(575, 300)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -486.0
+offset_top = -281.0
+offset_right = 486.0
+offset_bottom = 281.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -479.0
+offset_top = -276.0
+offset_right = 479.0
+offset_bottom = 276.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.180392, 0.180392, 0.180392, 1)
+
+[node name="task" type="Control" parent="CanvasLayer/Control"]
+clip_contents = true
+layout_mode = 1
+anchor_left = 0.085
+anchor_top = 0.19
+anchor_right = 0.916
+anchor_bottom = 0.926
+offset_left = 0.0800018
+offset_top = -0.12001
+offset_right = -0.232056
+offset_bottom = -0.0480347
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_jqqwu")
+
+[node name="UI" type="Control" parent="CanvasLayer/Control/task"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Level" type="Label" parent="CanvasLayer/Control/task/UI"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 430.0
+offset_right = 177.0
+offset_bottom = 465.0
+theme_override_fonts/font = ExtResource("6_dd1gn")
+theme_override_font_sizes/font_size = 35
+text = "Less Colors: 1"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/task/UI"]
+layout_mode = 0
+offset_left = 59.0
+offset_top = 23.0
+offset_right = 115.0
+offset_bottom = 63.0
+
+[node name="Time" type="Label" parent="CanvasLayer/Control/task/UI/HBoxContainer"]
+custom_minimum_size = Vector2(66.835, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_dd1gn")
+theme_override_font_sizes/font_size = 35
+text = "20.0"
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/task/UI/HBoxContainer"]
+custom_minimum_size = Vector2(25.605, 0)
+layout_mode = 2
+texture = ExtResource("7_ob1g0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="coin time" type="Label" parent="CanvasLayer/Control/task/UI/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_dd1gn")
+theme_override_font_sizes/font_size = 35
+text = "14.0"
+
+[node name="Freeze Label" type="Label" parent="CanvasLayer/Control/task/UI"]
+modulate = Color(0, 0.855488, 0.967825, 1)
+layout_mode = 0
+offset_left = 60.0
+offset_top = 56.0
+offset_right = 116.0
+offset_bottom = 91.0
+theme_override_fonts/font = ExtResource("6_dd1gn")
+theme_override_font_sizes/font_size = 35
+text = "20.0"
+
+[node name="Time2" type="TextureRect" parent="CanvasLayer/Control/task/UI"]
+layout_mode = 0
+offset_right = 75.0
+offset_bottom = 74.0
+texture = ExtResource("8_j0ulm")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/Control/task"]
+libraries = {
+&"": SubResource("AnimationLibrary_hsb8t")
+}
+autoplay = "Bot moving"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CanvasLayer/Control/task"]
+visible = false
+position = Vector2(59, 396)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_no2l8")
+autoplay = "default"
+frame = 1
+frame_progress = 0.213738
+
+[node name="Game" type="Control" parent="CanvasLayer/Control/task"]
+clip_contents = true
+layout_mode = 1
+anchor_left = 0.231
+anchor_top = 0.023
+anchor_right = 0.995
+anchor_bottom = 0.987
+offset_left = -0.0670013
+offset_top = 0.0290003
+offset_right = -0.215088
+offset_bottom = 0.20105
+
+[node name="ColorWord" type="Label" parent="CanvasLayer/Control/task/Game"]
+layout_mode = 0
+offset_left = 234.0
+offset_top = 5.00002
+offset_right = 367.0
+offset_bottom = 117.0
+theme_override_fonts/font = ExtResource("6_dd1gn")
+theme_override_font_sizes/font_size = 111
+text = "RED"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/task/Game"]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 102.0
+offset_right = 481.0
+offset_bottom = 470.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/task/Game/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button1" type="TextureButton" parent="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("10_qvf2m")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/ButtonNumber = 1
+
+[node name="Button2" type="TextureButton" parent="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("10_qvf2m")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/ButtonNumber = 2
+
+[node name="Button3" type="TextureButton" parent="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("10_qvf2m")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/ButtonNumber = 3
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Control/task/Game/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button4" type="TextureButton" parent="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("10_qvf2m")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/ButtonNumber = 4
+
+[node name="Button5" type="TextureButton" parent="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("10_qvf2m")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/ButtonNumber = 5
+
+[node name="Button6" type="TextureButton" parent="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("10_qvf2m")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/ButtonNumber = 6
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Control/task/Game/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Button7" type="TextureButton" parent="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("10_qvf2m")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/ButtonNumber = 7
+
+[node name="Button8" type="TextureButton" parent="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("10_qvf2m")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/ButtonNumber = 8
+
+[node name="Button9" type="TextureButton" parent="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("10_qvf2m")
+ignore_texture_size = true
+stretch_mode = 5
+metadata/ButtonNumber = 9
+
+[node name="falseTimer" type="Timer" parent="CanvasLayer/Control/task/Game"]
+wait_time = 2.0
+one_shot = true
+
+[node name="upgrades" type="Control" parent="CanvasLayer/Control"]
+visible = false
+clip_contents = true
+layout_mode = 1
+anchor_left = 0.085
+anchor_top = 0.19
+anchor_right = 0.916
+anchor_bottom = 0.926
+offset_left = 0.0800018
+offset_top = -0.12001
+offset_right = -0.232056
+offset_bottom = -0.0480347
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_ek8ae")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/upgrades"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1.0
+offset_bottom = 6.10352e-05
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/upgrades/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Container" type="HBoxContainer" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="Upgrade 1" type="Button" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer/Container"]
+custom_minimum_size = Vector2(360, 100)
+layout_mode = 2
+theme = ExtResource("12_13wvl")
+text = "Time Expand"
+icon = ExtResource("13_mt3ir")
+alignment = 0
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer/Container/Upgrade 1"]
+layout_mode = 2
+offset_left = 238.0
+offset_top = 14.0
+offset_right = 306.0
+offset_bottom = 82.0
+texture = ExtResource("8_j0ulm")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer/Container/Upgrade 1/TextureRect"]
+layout_mode = 2
+offset_left = 49.0
+offset_top = 16.0
+offset_right = 92.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("6_dd1gn")
+theme_override_font_sizes/font_size = 36
+text = "+10"
+
+[node name="coin" type="TextureRect" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer/Container"]
+custom_minimum_size = Vector2(37.575, 0)
+layout_mode = 2
+texture = ExtResource("7_ob1g0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="expand_cost" type="Label" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer/Container"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_dd1gn")
+theme_override_font_sizes/font_size = 35
+text = "+5"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="Upgrade 3" type="Button" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(360, 100)
+layout_mode = 2
+theme = ExtResource("12_13wvl")
+text = "Less Colors +1"
+icon = ExtResource("14_ave8s")
+expand_icon = true
+
+[node name="coin2" type="TextureRect" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(37.575, 0)
+layout_mode = 2
+texture = ExtResource("7_ob1g0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="upgrade_cost" type="Label" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_dd1gn")
+theme_override_font_sizes/font_size = 35
+text = "+10"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="CanvasLayer/Control/upgrades/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="Upgrade 2" type="Button" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(360, 100)
+layout_mode = 2
+theme = ExtResource("12_13wvl")
+text = "Time Freeze"
+icon = ExtResource("15_ilhec")
+alignment = 0
+expand_icon = true
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer2/HBoxContainer/Upgrade 2"]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 14.0
+offset_right = 308.0
+offset_bottom = 88.0
+texture = ExtResource("16_tsxui")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label2" type="Label" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer2/HBoxContainer/Upgrade 2/TextureRect2"]
+layout_mode = 2
+offset_left = 73.0
+offset_top = 20.0
+offset_right = 116.0
+offset_bottom = 57.0
+theme_override_fonts/font = ExtResource("6_dd1gn")
+theme_override_font_sizes/font_size = 36
+text = "+10"
+
+[node name="coin3" type="TextureRect" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(37.575, 0)
+layout_mode = 2
+texture = ExtResource("7_ob1g0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="freeze_cost" type="Label" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer2/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_dd1gn")
+theme_override_font_sizes/font_size = 35
+text = "+10"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = -3
+
+[node name="Upgrade 4" type="Button" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(360, 100)
+layout_mode = 2
+theme = ExtResource("12_13wvl")
+text = "Auto-Bot"
+icon = ExtResource("17_57myn")
+alignment = 0
+expand_icon = true
+
+[node name="TextureRect2" type="TextureRect" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer2/HBoxContainer2/Upgrade 4"]
+layout_mode = 0
+offset_left = 260.0
+offset_top = 18.0
+offset_right = 331.0
+offset_bottom = 92.0
+texture = ExtResource("18_pyjsd")
+
+[node name="coin3" type="TextureRect" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+custom_minimum_size = Vector2(37.575, 0)
+layout_mode = 2
+texture = ExtResource("7_ob1g0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="bot_cost" type="Label" parent="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer2/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_dd1gn")
+theme_override_font_sizes/font_size = 35
+text = "+300"
+
+[node name="Done" type="ColorRect" parent="CanvasLayer/Control"]
+modulate = Color(1, 1, 1, 0)
+z_index = 1
+layout_mode = 0
+offset_left = 90.0
+offset_top = 46.0
+offset_right = 1058.0
+offset_bottom = 603.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -478.0
+offset_top = -276.0
+offset_right = 479.0
+offset_bottom = -202.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(475, 0)
+layout_mode = 2
+theme = ExtResource("19_8jgck")
+text = "Task"
+icon = ExtResource("20_pt3cr")
+expand_icon = true
+
+[node name="Button2" type="Button" parent="CanvasLayer/Control/HBoxContainer"]
+custom_minimum_size = Vector2(475, 0)
+layout_mode = 2
+theme = ExtResource("19_8jgck")
+text = "Upgrades"
+icon = ExtResource("21_srxoo")
+expand_icon = true
+
+[node name="flash_timer" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="freeze time" type="Timer" parent="."]
+wait_time = 10.0
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="cash" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("22_5d1va")
+bus = &"SFX"
+
+[node name="ice crack" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("23_j366d")
+bus = &"SFX"
+
+[node name="close" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("24_cwj1c")
+bus = &"SFX"
+
+[node name="open" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("25_jfiwt")
+bus = &"SFX"
+
+[node name="Success" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("26_qtjd8")
+bus = &"SFX"
+
+[node name="fail purchase" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("27_u8r5o")
+bus = &"SFX"
+
+[node name="warning" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("28_qry2h")
+bus = &"SFX"
+
+[node name="Fail task" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("29_u3yna")
+bus = &"SFX"
+
+[node name="SuccessTask" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("30_fmb81")
+bus = &"SFX"
+
+[connection signal="mouse_entered" from="icon/Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="mouse_exited" from="icon/Area2D" to="." method="_on_area_2d_area_exited"]
+[connection signal="lever_task_done" from="CanvasLayer/Control/task" to="." method="_on_task_lever_task_done"]
+[connection signal="lever_task_done" from="CanvasLayer/Control/task" to="Global" method="_on_task_lever_task_done"]
+[connection signal="tick_task_done" from="CanvasLayer/Control/task" to="Global" method="update_cost"]
+[connection signal="pressed" from="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer/Button1" to="CanvasLayer/Control/task" method="_on_colorbutton_pressed" binds= [1]]
+[connection signal="pressed" from="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer/Button2" to="CanvasLayer/Control/task" method="_on_colorbutton_pressed" binds= [2]]
+[connection signal="pressed" from="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer/Button3" to="CanvasLayer/Control/task" method="_on_colorbutton_pressed" binds= [3]]
+[connection signal="pressed" from="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer2/Button4" to="CanvasLayer/Control/task" method="_on_colorbutton_pressed" binds= [4]]
+[connection signal="pressed" from="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer2/Button5" to="CanvasLayer/Control/task" method="_on_colorbutton_pressed" binds= [5]]
+[connection signal="pressed" from="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer2/Button6" to="CanvasLayer/Control/task" method="_on_colorbutton_pressed" binds= [6]]
+[connection signal="pressed" from="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer3/Button7" to="CanvasLayer/Control/task" method="_on_colorbutton_pressed" binds= [7]]
+[connection signal="pressed" from="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer3/Button8" to="CanvasLayer/Control/task" method="_on_colorbutton_pressed" binds= [8]]
+[connection signal="pressed" from="CanvasLayer/Control/task/Game/VBoxContainer/HBoxContainer3/Button9" to="CanvasLayer/Control/task" method="_on_colorbutton_pressed" binds= [9]]
+[connection signal="timeout" from="CanvasLayer/Control/task/Game/falseTimer" to="CanvasLayer/Control/task" method="_on_false_timer_timeout"]
+[connection signal="Task_upgrade" from="CanvasLayer/Control/upgrades" to="CanvasLayer/Control/task" method="task_upgrade"]
+[connection signal="update_value" from="CanvasLayer/Control/upgrades" to="Global" method="update_cost"]
+[connection signal="pressed" from="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer/Container/Upgrade 1" to="CanvasLayer/Control/upgrades" method="_on_upgrade_1_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer/HBoxContainer/Upgrade 3" to="CanvasLayer/Control/upgrades" method="_on_level_increase_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer2/HBoxContainer/Upgrade 2" to="CanvasLayer/Control/upgrades" method="_on_upgrade_2_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/upgrades/HBoxContainer/VBoxContainer2/HBoxContainer2/Upgrade 4" to="CanvasLayer/Control/upgrades" method="_on_upgrade_4_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Button" to="CanvasLayer" method="_on_task_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/HBoxContainer/Button2" to="CanvasLayer" method="_on_button_2_pressed"]
+[connection signal="timeout" from="flash_timer" to="." method="_on_flash_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="Global" method="_on_timer_timeout"]
+[connection signal="timeout" from="freeze time" to="Global" method="_on_freeze_time_timeout"]

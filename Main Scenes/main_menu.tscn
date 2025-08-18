@@ -1,0 +1,783 @@
+[gd_scene load_steps=24 format=3 uid="uid://bbwakli1p5ti0"]
+
+[ext_resource type="Script" uid="uid://4kfc0iwaf7c4" path="res://Scripts/Main Menu logic/main_menu.gd" id="1_d6f84"]
+[ext_resource type="FontFile" uid="uid://34tumdo8an2b" path="res://Others/Fonts/Sabo-Filled.otf" id="1_gyixg"]
+[ext_resource type="Theme" uid="uid://f7svjcn08icf" path="res://Others/Main Menu.tres" id="2_d6f84"]
+[ext_resource type="Texture2D" uid="uid://bsqejevbefeq3" path="res://Sprites/Shapes/ButtonEmptyUnpressed1.png" id="4_uvh1k"]
+[ext_resource type="Texture2D" uid="uid://b8wn6jb1hurwu" path="res://Sprites/Shapes/ButtonEmptyUnpressed4.png" id="5_3rosc"]
+[ext_resource type="AudioStream" uid="uid://ca5vx7xtodpwx" path="res://Audio/Songs/Game-Menu_Looping_LoFi.mp3" id="6_3rosc"]
+[ext_resource type="Texture2D" uid="uid://ds2qhleu0vt61" path="res://Sprites/Photos/Screenshot 2025-07-20 234846.png" id="6_kdoxk"]
+[ext_resource type="Texture2D" uid="uid://devblc7u15iet" path="res://Sprites/Keys/mouse_left.png" id="7_udgu5"]
+[ext_resource type="Texture2D" uid="uid://diwnq6w6u6g4e" path="res://Sprites/Keys/keyboard_w.png" id="8_hgt2a"]
+[ext_resource type="Texture2D" uid="uid://g8cbg30s1x2h" path="res://Sprites/Keys/keyboard_a.png" id="9_ydk4q"]
+[ext_resource type="Texture2D" uid="uid://dcd4fkw1ge41s" path="res://Sprites/Keys/keyboard_s.png" id="10_b6usw"]
+[ext_resource type="Texture2D" uid="uid://babexc61l4use" path="res://Sprites/Keys/keyboard_d.png" id="11_i81sl"]
+[ext_resource type="Texture2D" uid="uid://b7bqqhbxr7y4f" path="res://Sprites/Photos/Screenshot 2025-07-20 234858.png" id="12_824hp"]
+[ext_resource type="Texture2D" uid="uid://bssi2axmejnxp" path="res://Sprites/Keys/mouse_scroll_vertical.png" id="12_ydk4q"]
+[ext_resource type="Texture2D" uid="uid://cfbfyvset01j1" path="res://Sprites/Keys/keyboard_tab.png" id="13_b6usw"]
+[ext_resource type="Texture2D" uid="uid://dfwrx1336ujkk" path="res://Sprites/Photos/Screenshot 2025-07-20 234912.png" id="13_so3xr"]
+[ext_resource type="Texture2D" uid="uid://24pyssx8l2eb" path="res://Sprites/Photos/Screenshot 2025-07-20 234959.png" id="14_ei22y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2erhw"]
+bg_color = Color(0.12549, 0.12549, 0.12549, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 12
+shadow_offset = Vector2(13.17, 9.42)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvh1k"]
+bg_color = Color(0.207843, 0.611765, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 4
+expand_margin_top = 3.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3rosc"]
+bg_color = Color(0.207843, 0.611765, 1, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 4
+expand_margin_top = 3.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yg1sm"]
+bg_color = Color(0.207843, 0.709804, 0.368627, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 4
+expand_margin_top = 3.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kdoxk"]
+bg_color = Color(0.207843, 0.709804, 0.368627, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 1
+corner_radius_bottom_right = 1
+corner_radius_bottom_left = 4
+expand_margin_top = 3.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_biagi"]
+bg_color = Color(0.37897, 0.666827, 0, 1)
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_d6f84")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -39.0
+offset_top = -41.0
+offset_right = 1236.0
+offset_bottom = 713.0
+mouse_filter = 2
+color = Color(0.901961, 1, 0.960784, 1)
+
+[node name="Main" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Main"]
+layout_mode = 0
+offset_left = 209.0
+offset_top = 81.0
+offset_right = 915.0
+offset_bottom = 202.0
+theme_override_colors/font_color = Color(1, 0.980392, 0.803922, 1)
+theme_override_colors/font_outline_color = Color(1, 0.980392, 0.803922, 1)
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_2erhw")
+text = "Tick-Task"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Main"]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 271.0
+offset_right = 744.0
+offset_bottom = 587.0
+
+[node name="Start" type="Button" parent="CanvasLayer/Main/VBoxContainer"]
+custom_minimum_size = Vector2(0, 59.585)
+layout_mode = 2
+theme = ExtResource("2_d6f84")
+text = "Start"
+
+[node name="Tutorial" type="Button" parent="CanvasLayer/Main/VBoxContainer"]
+custom_minimum_size = Vector2(0, 59.585)
+layout_mode = 2
+theme = ExtResource("2_d6f84")
+text = "Tutorial"
+
+[node name="Leaderboard" type="Button" parent="CanvasLayer/Main/VBoxContainer"]
+custom_minimum_size = Vector2(0, 59.585)
+layout_mode = 2
+theme = ExtResource("2_d6f84")
+text = "LeaderBoard"
+
+[node name="Settings" type="Button" parent="CanvasLayer/Main/VBoxContainer"]
+custom_minimum_size = Vector2(0, 59.585)
+layout_mode = 2
+theme = ExtResource("2_d6f84")
+text = "Settings"
+
+[node name="Exit" type="Button" parent="CanvasLayer/Main/VBoxContainer"]
+custom_minimum_size = Vector2(0, 59.585)
+layout_mode = 2
+theme = ExtResource("2_d6f84")
+text = "Exit"
+
+[node name="Game Jam" type="Button" parent="CanvasLayer/Main"]
+custom_minimum_size = Vector2(0, 59.585)
+layout_mode = 2
+offset_left = 17.0
+offset_top = 550.0
+offset_right = 222.0
+offset_bottom = 637.0
+theme = ExtResource("2_d6f84")
+text = "Game Jam Notes"
+
+[node name="Settings" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Music_volume" type="HSlider" parent="CanvasLayer/Settings"]
+layout_mode = 0
+offset_left = 365.0
+offset_top = 20.0
+offset_right = 947.0
+offset_bottom = 63.0
+scale = Vector2(1, 1.61)
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_uvh1k")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_3rosc")
+step = 1.325
+value = 99.375
+tick_count = 5
+
+[node name="TextureButton" type="TextureButton" parent="CanvasLayer/Settings/Music_volume"]
+layout_mode = 0
+offset_left = 612.0
+offset_top = -3.72671
+offset_right = 693.0
+offset_bottom = 46.2733
+toggle_mode = true
+texture_normal = ExtResource("4_uvh1k")
+texture_pressed = ExtResource("5_3rosc")
+texture_hover = ExtResource("4_uvh1k")
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Settings/Music_volume"]
+layout_mode = 0
+offset_left = -78.0
+offset_top = -1.24224
+offset_right = -2.0
+offset_bottom = 43.7578
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 30
+text = "30%"
+
+[node name="Label2" type="Label" parent="CanvasLayer/Settings/Music_volume"]
+layout_mode = 0
+offset_left = -349.0
+offset_top = 0.621118
+offset_right = -87.0
+offset_bottom = 45.6211
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 30
+text = "Music Volume:"
+
+[node name="SFX_Volume" type="HSlider" parent="CanvasLayer/Settings"]
+layout_mode = 0
+offset_left = 366.0
+offset_top = 125.0
+offset_right = 948.0
+offset_bottom = 168.0
+scale = Vector2(1, 1.61)
+theme_override_styles/grabber_area = SubResource("StyleBoxFlat_yg1sm")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxFlat_kdoxk")
+value = 100.0
+tick_count = 5
+
+[node name="TextureButton2" type="TextureButton" parent="CanvasLayer/Settings/SFX_Volume"]
+layout_mode = 0
+offset_left = 611.0
+offset_top = -4.34783
+offset_right = 692.0
+offset_bottom = 45.6522
+toggle_mode = true
+texture_normal = ExtResource("4_uvh1k")
+texture_pressed = ExtResource("5_3rosc")
+texture_hover = ExtResource("4_uvh1k")
+stretch_mode = 0
+
+[node name="Label2" type="Label" parent="CanvasLayer/Settings/SFX_Volume"]
+layout_mode = 0
+offset_left = -83.0
+offset_top = -0.621117
+offset_right = -7.0
+offset_bottom = 44.3789
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 30
+text = "30%"
+
+[node name="Label3" type="Label" parent="CanvasLayer/Settings/SFX_Volume"]
+layout_mode = 0
+offset_left = -349.0
+offset_top = 1.24224
+offset_right = -87.0
+offset_bottom = 46.2422
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 30
+text = "SFX Volume:"
+
+[node name="Donate" type="Button" parent="CanvasLayer/Settings"]
+custom_minimum_size = Vector2(0, 59.585)
+layout_mode = 0
+offset_left = 135.0
+offset_top = 253.0
+offset_right = 324.0
+offset_bottom = 346.0
+theme = ExtResource("2_d6f84")
+text = "Donate"
+
+[node name="Back" type="Button" parent="CanvasLayer/Settings"]
+custom_minimum_size = Vector2(0, 59.585)
+layout_mode = 0
+offset_left = 919.0
+offset_top = 525.0
+offset_right = 1108.0
+offset_bottom = 618.0
+theme = ExtResource("2_d6f84")
+text = "Back"
+
+[node name="LeaderBoard" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Personal_label" type="Label" parent="CanvasLayer/LeaderBoard"]
+layout_mode = 0
+offset_left = 39.0
+offset_top = 25.0
+offset_right = 323.0
+offset_bottom = 76.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 30
+text = "Personal Best: 2135.0"
+
+[node name="Personal_label2" type="Label" parent="CanvasLayer/LeaderBoard"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 210.0
+offset_right = 1008.0
+offset_bottom = 387.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 30
+text = "Note: Online leaderboard was meant to be here, 
+but time ran out (game jam)"
+
+[node name="Back" type="Button" parent="CanvasLayer/LeaderBoard"]
+custom_minimum_size = Vector2(0, 59.585)
+layout_mode = 0
+offset_left = 919.0
+offset_top = 525.0
+offset_right = 1108.0
+offset_bottom = 618.0
+theme = ExtResource("2_d6f84")
+text = "Back"
+
+[node name="Game Jam" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back" type="Button" parent="CanvasLayer/Game Jam"]
+custom_minimum_size = Vector2(0, 59.585)
+layout_mode = 0
+offset_left = 919.0
+offset_top = 525.0
+offset_right = 1108.0
+offset_bottom = 618.0
+theme = ExtResource("2_d6f84")
+text = "Back"
+
+[node name="notes" type="Label" parent="CanvasLayer/Game Jam"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 20.0
+offset_right = 1131.0
+offset_bottom = 510.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 25
+text = "notes about the Game Jam:
+i am astronial, a DSAI (data science and AI) student, doing games as
+a side thing for fun, and here is my message.
+sorry for the game to be seen like that, this is my very first game 
+and my very first game jam. i am a bad designer too as you can see, 
+the design and UI is not the best. On top of that the game jam time 
+ran out on me, i missed 4 days of the jam due to personal stuff
+so i ran out on multiple things, but i hope i made something that 
+can make the people happy to play, i want everyone to give me 
+their full honest review so i can get on making it even better.
+stuff that was planned:
+8/20 tasks were made
+3/9 distraction ideas were made
+online leaderboard (to make the game fun)
+more settings...
+
+give me your guys suggestions too, and thanks for 
+giving my game some of your time, have a nice day"
+
+[node name="Tutorial" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Back" type="Button" parent="CanvasLayer/Tutorial"]
+custom_minimum_size = Vector2(0, 59.585)
+layout_mode = 0
+offset_left = 919.0
+offset_top = 525.0
+offset_right = 1108.0
+offset_bottom = 618.0
+theme = ExtResource("2_d6f84")
+text = "Back"
+
+[node name="next" type="Button" parent="CanvasLayer/Tutorial"]
+custom_minimum_size = Vector2(0, 59.585)
+layout_mode = 0
+offset_left = 1067.0
+offset_top = 209.0
+offset_right = 1139.0
+offset_bottom = 302.0
+theme = ExtResource("2_d6f84")
+text = ">"
+
+[node name="previous" type="Button" parent="CanvasLayer/Tutorial"]
+custom_minimum_size = Vector2(0, 59.585)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 199.0
+offset_right = 68.0
+offset_bottom = 292.0
+theme = ExtResource("2_d6f84")
+text = "<"
+
+[node name="page1" type="Control" parent="CanvasLayer/Tutorial"]
+anchors_preset = 0
+offset_left = 92.0
+offset_top = 17.0
+offset_right = 1052.0
+offset_bottom = 509.0
+
+[node name="notes" type="Label" parent="CanvasLayer/Tutorial/page1"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 4.0
+offset_right = 1020.0
+offset_bottom = 140.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 25
+text = "Your Task in the game is to survive, you are given a task to make, your goal is to make sure it doesn't run out of time"
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Tutorial/page1"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 171.0
+offset_right = 773.0
+offset_bottom = 591.0
+texture = ExtResource("6_kdoxk")
+expand_mode = 1
+
+[node name="notes" type="Label" parent="CanvasLayer/Tutorial/page1/TextureRect"]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 364.0
+offset_right = 151.0
+offset_bottom = 407.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_biagi")
+text = "Tasks time (to keep up)"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="notes3" type="Label" parent="CanvasLayer/Tutorial/page1/TextureRect"]
+layout_mode = 0
+offset_left = 602.0
+offset_top = 47.0
+offset_right = 753.0
+offset_bottom = 93.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_biagi")
+text = "Coins to spend on stuff (duh)"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="notes4" type="Label" parent="CanvasLayer/Tutorial/page1/TextureRect"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 31.0
+offset_right = 171.0
+offset_bottom = 77.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_biagi")
+text = "Your Lives
+(don't lose em)"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="notes2" type="Label" parent="CanvasLayer/Tutorial/page1/TextureRect"]
+layout_mode = 0
+offset_left = 406.0
+offset_top = 221.0
+offset_right = 595.0
+offset_bottom = 264.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_biagi")
+text = "Task
+left click to open"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="notes3" type="TextureRect" parent="CanvasLayer/Tutorial/page1/TextureRect/notes2"]
+layout_mode = 0
+offset_right = 29.0
+offset_bottom = 26.0
+texture = ExtResource("7_udgu5")
+expand_mode = 1
+
+[node name="notes5" type="Label" parent="CanvasLayer/Tutorial/page1/TextureRect"]
+layout_mode = 0
+offset_left = 501.0
+offset_top = 303.0
+offset_right = 754.0
+offset_bottom = 401.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_biagi")
+text = "Move Around"
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="notes3" type="TextureRect" parent="CanvasLayer/Tutorial/page1/TextureRect/notes5"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 24.0
+offset_right = 210.0
+offset_bottom = 50.0
+texture = ExtResource("8_hgt2a")
+expand_mode = 1
+
+[node name="notes4" type="TextureRect" parent="CanvasLayer/Tutorial/page1/TextureRect/notes5"]
+layout_mode = 0
+offset_left = 158.0
+offset_top = 44.935
+offset_right = 187.0
+offset_bottom = 70.935
+texture = ExtResource("9_ydk4q")
+expand_mode = 1
+
+[node name="notes5" type="TextureRect" parent="CanvasLayer/Tutorial/page1/TextureRect/notes5"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 44.935
+offset_right = 210.0
+offset_bottom = 70.935
+texture = ExtResource("10_b6usw")
+expand_mode = 1
+
+[node name="notes6" type="TextureRect" parent="CanvasLayer/Tutorial/page1/TextureRect/notes5"]
+layout_mode = 0
+offset_left = 204.4
+offset_top = 44.935
+offset_right = 233.4
+offset_bottom = 70.935
+texture = ExtResource("11_i81sl")
+expand_mode = 1
+
+[node name="notes6" type="Label" parent="CanvasLayer/Tutorial/page1/TextureRect"]
+layout_mode = 0
+offset_left = 245.0
+offset_top = 303.0
+offset_right = 498.0
+offset_bottom = 401.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_biagi")
+text = "Scroll for Zoom "
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="notes3" type="TextureRect" parent="CanvasLayer/Tutorial/page1/TextureRect/notes6"]
+layout_mode = 0
+offset_left = 181.0
+offset_top = 24.0
+offset_right = 241.0
+offset_bottom = 83.0
+texture = ExtResource("12_ydk4q")
+expand_mode = 1
+
+[node name="notes7" type="Label" parent="CanvasLayer/Tutorial/page1/TextureRect"]
+layout_mode = 0
+offset_left = 604.0
+offset_top = 209.0
+offset_right = 760.0
+offset_bottom = 291.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_biagi")
+text = "Tab to pause"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="notes3" type="TextureRect" parent="CanvasLayer/Tutorial/page1/TextureRect/notes7"]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 20.0
+offset_right = 104.0
+offset_bottom = 79.0
+texture = ExtResource("13_b6usw")
+expand_mode = 1
+
+[node name="page2" type="Control" parent="CanvasLayer/Tutorial"]
+visible = false
+anchors_preset = 0
+offset_left = 92.0
+offset_top = 17.0
+offset_right = 1052.0
+offset_bottom = 509.0
+
+[node name="notes" type="Label" parent="CanvasLayer/Tutorial/page2"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 4.0
+offset_right = 1020.0
+offset_bottom = 140.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 25
+text = "Each task is simple and can be figured out quickly, finish it before time runs out, and then reset. Gain money when you finish the task, but to avoid spammers 👀 you will only gain money if the time is less than money time, do the task, time resets"
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Tutorial/page2"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 171.0
+offset_right = 773.0
+offset_bottom = 591.0
+texture = ExtResource("12_824hp")
+expand_mode = 1
+
+[node name="notes" type="Label" parent="CanvasLayer/Tutorial/page2/TextureRect"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 119.0
+offset_right = 214.0
+offset_bottom = 162.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_biagi")
+text = "Task   money
+time     time"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="notes2" type="Label" parent="CanvasLayer/Tutorial/page2/TextureRect"]
+layout_mode = 0
+offset_left = 214.0
+offset_top = 366.0
+offset_right = 326.0
+offset_bottom = 388.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_biagi")
+text = "Task Level"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="notes3" type="Label" parent="CanvasLayer/Tutorial/page2/TextureRect"]
+layout_mode = 0
+offset_left = 520.0
+offset_top = 143.0
+offset_right = 590.0
+offset_bottom = 166.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_biagi")
+text = "Task"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="page3" type="Control" parent="CanvasLayer/Tutorial"]
+visible = false
+anchors_preset = 0
+offset_left = 92.0
+offset_top = 17.0
+offset_right = 1052.0
+offset_bottom = 509.0
+
+[node name="notes" type="Label" parent="CanvasLayer/Tutorial/page3"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -8.0
+offset_right = 1010.0
+offset_bottom = 193.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 24
+text = "And to help with your playthrough, of course you need to buy stuff, either expand your task time, pause the task for a 10 secons to give you a chance, or upgrade the task to be easier, even better buy an autobot, to do the tasks for you and still get money from it, of course prices go up as you go through"
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Tutorial/page3"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 171.0
+offset_right = 773.0
+offset_bottom = 591.0
+texture = ExtResource("13_so3xr")
+expand_mode = 1
+
+[node name="notes" type="Label" parent="CanvasLayer/Tutorial/page3/TextureRect"]
+layout_mode = 0
+offset_left = 510.0
+offset_top = 352.0
+offset_right = 729.0
+offset_bottom = 420.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 15
+theme_override_styles/normal = SubResource("StyleBoxFlat_biagi")
+text = "Use shortcut keys as displayed to make things faster"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="page4" type="Control" parent="CanvasLayer/Tutorial"]
+visible = false
+anchors_preset = 0
+offset_left = 92.0
+offset_top = 17.0
+offset_right = 1052.0
+offset_bottom = 509.0
+
+[node name="notes" type="Label" parent="CanvasLayer/Tutorial/page4"]
+layout_mode = 0
+offset_left = -18.0
+offset_top = -8.0
+offset_right = 1010.0
+offset_bottom = 193.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 24
+text = " Soon enough more and more task will arrive, let's see how much you can handle now, survive the most time you can, and score the biggest number. almost forgot, AVOID Distractions. these stuff will prevent you from doing your tasks, so watch out and be prepared"
+autowrap_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Tutorial/page4"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 171.0
+offset_right = 773.0
+offset_bottom = 591.0
+texture = ExtResource("14_ei22y")
+expand_mode = 1
+
+[node name="page5" type="Control" parent="CanvasLayer/Tutorial"]
+visible = false
+anchors_preset = 0
+offset_left = 92.0
+offset_top = 17.0
+offset_right = 1052.0
+offset_bottom = 509.0
+
+[node name="notes" type="Label" parent="CanvasLayer/Tutorial/page5"]
+layout_mode = 0
+offset_left = 116.0
+offset_top = 188.0
+offset_right = 786.0
+offset_bottom = 285.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 24
+text = "(I didn't get much time to fully test so please ignore any bugs you find :) thanks)"
+autowrap_mode = 2
+
+[node name="notes" type="Label" parent="CanvasLayer/Tutorial"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 594.0
+offset_right = 39.0
+offset_bottom = 659.0
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("1_gyixg")
+theme_override_font_sizes/font_size = 25
+text = "1
+"
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_3rosc")
+autoplay = true
+bus = &"BG Music"
+parameters/looping = true
+
+[connection signal="pressed" from="CanvasLayer/Main/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CanvasLayer/Main/VBoxContainer/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="CanvasLayer/Main/VBoxContainer/Leaderboard" to="." method="_on_leaderboard_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Main/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="CanvasLayer/Main/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="CanvasLayer/Main/Game Jam" to="." method="_on_game_jam_pressed"]
+[connection signal="pressed" from="CanvasLayer/Settings/Music_volume/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Settings/SFX_Volume/TextureButton2" to="." method="_on_SFX_texture_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Settings/Donate" to="." method="_on_donate_pressed"]
+[connection signal="pressed" from="CanvasLayer/Settings/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="CanvasLayer/LeaderBoard/Back" to="." method="_on_backLeader_pressed"]
+[connection signal="pressed" from="CanvasLayer/Game Jam/Back" to="." method="_on_GameBack_pressed"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/Back" to="." method="_on_TutorialBack_pressed"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="CanvasLayer/Tutorial/previous" to="." method="_on_backButton_pressed"]

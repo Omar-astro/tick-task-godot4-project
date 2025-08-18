@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dgwfiwatwacte"
+path="res://.godot/imported/Dark Ambient Music No Copyright.mp3-2994edb650bebf0f3c3c54632e5804aa.mp3str"
+
+[deps]
+
+source_file="res://Audio/Songs/Dark Ambient Music No Copyright.mp3"
+dest_files=["res://.godot/imported/Dark Ambient Music No Copyright.mp3-2994edb650bebf0f3c3c54632e5804aa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

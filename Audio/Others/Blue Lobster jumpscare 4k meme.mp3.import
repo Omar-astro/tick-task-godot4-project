@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c3idqdfqgfqhj"
+path="res://.godot/imported/Blue Lobster jumpscare 4k meme.mp3-5274a88f5d16ba9ce445b540a2c126c0.mp3str"
+
+[deps]
+
+source_file="res://Audio/Others/Blue Lobster jumpscare 4k meme.mp3"
+dest_files=["res://.godot/imported/Blue Lobster jumpscare 4k meme.mp3-5274a88f5d16ba9ce445b540a2c126c0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

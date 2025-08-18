@@ -1,0 +1,33 @@
+var VARIABLE = "user://variable.json"
+
+func save():
+	var data = {'po1': [block_1.position.x, block_1.position.y],
+			'po2': [block_2.position.x, block_2.position.y],
+			'po3': [block_3.position.x, block_3.position.y],
+			'po4': [block_4.position.x, block_4.position.y]}
+	var json_file = JSON.stringify(data)
+	var file = FileAccess.open(VARIABLE, FileAccess.WRITE)
+	file.store_string(json_file)
+	file.close()
+	print("saved succefully")
+
+func load_file():
+	if FileAccess.file_exists(VARIABLE):
+		var file = FileAccess.open(VARIABLE, FileAccess.READ)
+		var json_string = file.get_as_text()
+		file.close()
+		var result = JSON.parse_string(json_string)
+		if result is Dictionary:
+			print('Loaded data: ', result)
+			block_1.position.x = result['po1'][0]
+			block_1.position.y = result['po1'][1]
+			block_2.position.x = result['po2'][0]
+			block_2.position.y = result['po2'][1]
+			block_3.position.x = result['po3'][0]
+			block_3.position.y = result['po3'][1]
+			block_4.position.x = result['po4'][0]
+			block_4.position.y = result['po4'][1]
+		else:
+			print('file not save or corrupted')
+	else:
+		print('no file found')

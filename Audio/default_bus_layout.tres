@@ -1,0 +1,65 @@
+[gd_resource type="AudioBusLayout" load_steps=4 format=3 uid="uid://c5vx7y1rserf0"]
+
+[sub_resource type="AudioEffectHighPassFilter" id="AudioEffectHighPassFilter_ai37j"]
+resource_name = "HighPassFilter"
+cutoff_hz = 140.0
+
+[sub_resource type="AudioEffectReverb" id="AudioEffectReverb_ai37j"]
+resource_name = "Reverb"
+predelay_msec = 20.0
+room_size = 0.6
+damping = 0.65
+spread = 0.9
+dry = 0.85
+wet = 0.15
+
+[sub_resource type="AudioEffectChorus" id="AudioEffectChorus_ai37j"]
+resource_name = "Chorus"
+dry = 0.8
+wet = 0.2
+voice/1/rate_hz = 0.3
+voice/1/depth_ms = 0.2
+voice/1/level_db = -6.0
+voice/1/pan = -0.4
+voice/2/rate_hz = 0.3
+voice/2/depth_ms = 0.22
+voice/2/level_db = -6.0
+voice/2/pan = 0.4
+
+[resource]
+bus/1/name = &"SFX"
+bus/1/solo = false
+bus/1/mute = false
+bus/1/bypass_fx = false
+bus/1/volume_db = 0.0
+bus/1/send = &"Master"
+bus/2/name = &"BG Music"
+bus/2/solo = false
+bus/2/mute = false
+bus/2/bypass_fx = false
+bus/2/volume_db = 0.0
+bus/2/send = &"Master"
+bus/2/effect/0/effect = SubResource("AudioEffectHighPassFilter_ai37j")
+bus/2/effect/0/enabled = true
+bus/2/effect/1/effect = SubResource("AudioEffectReverb_ai37j")
+bus/2/effect/1/enabled = true
+bus/2/effect/2/effect = SubResource("AudioEffectChorus_ai37j")
+bus/2/effect/2/enabled = true
+bus/3/name = &"Others"
+bus/3/solo = false
+bus/3/mute = false
+bus/3/bypass_fx = false
+bus/3/volume_db = -10.0741
+bus/3/send = &"Master"
+bus/4/name = &"JumpScare"
+bus/4/solo = false
+bus/4/mute = false
+bus/4/bypass_fx = false
+bus/4/volume_db = 0.0
+bus/4/send = &"Master"
+bus/5/name = &"Main Menu"
+bus/5/solo = false
+bus/5/mute = false
+bus/5/bypass_fx = false
+bus/5/volume_db = 0.0
+bus/5/send = &"Master"

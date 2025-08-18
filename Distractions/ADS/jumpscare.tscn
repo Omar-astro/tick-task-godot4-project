@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://dpyln62l3yi4a"]
+
+[ext_resource type="Script" uid="uid://mhj8dlv4a0cs" path="res://Scripts/Distractions/jumpscare.gd" id="1_cw5vc"]
+[ext_resource type="AudioStream" uid="uid://c3idqdfqgfqhj" path="res://Audio/Others/Blue Lobster jumpscare 4k meme.mp3" id="2_6wew8"]
+[ext_resource type="Texture2D" uid="uid://d3retoyv6p06f" path="res://Sprites/ADS/maxresdefault.jpg" id="2_es6qt"]
+
+[node name="Jumpscare" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cw5vc")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="TextureButton" type="TextureRect" parent="CanvasLayer"]
+visible = false
+offset_right = 1153.0
+offset_bottom = 647.0
+texture = ExtResource("2_es6qt")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_6wew8")
+volume_db = 20.0
+bus = &"JumpScare"
+
+[node name="delay" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_audio_stream_player_finished"]
+[connection signal="timeout" from="delay" to="." method="_on_delay_timeout"]
