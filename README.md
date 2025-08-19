@@ -74,3 +74,11 @@ Here are some in-game captures:
 - **Task Scenes/** – Scenes for individual tasks/puzzles  
 - **export_presets.cfg** – Godot export settings  
 - **README.md** – Project documentation  
+
+---
+
+## 🎥 Game Trailer
+
+Check out the official trailer for the game!  
+
+[![Watch the trailer](https://img.youtube.com/vi/DxveAC8AwiQ/0.jpg)](https://youtu.be/DxveAC8AwiQ?si=-HVkAwvgUW_4lxeh)
